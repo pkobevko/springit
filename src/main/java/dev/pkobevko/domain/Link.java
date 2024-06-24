@@ -4,49 +4,27 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@Getter
+@Setter
+@RequiredArgsConstructor
+@NoArgsConstructor
+@ToString(exclude = {"url"})
 public class Link {
     @Id
     @GeneratedValue
     private Long id;
+    @NonNull
     private String title;
+    @NonNull
     private String url;
-
-    public Link() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    @Override
-    public String toString() {
-        return "Link{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                '}';
-    }
 
     @Override
     public boolean equals(Object o) {
