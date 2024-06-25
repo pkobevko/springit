@@ -17,7 +17,7 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Comment {
+public class Comment extends Auditable {
     @Id
     @GeneratedValue
     private Long id;
