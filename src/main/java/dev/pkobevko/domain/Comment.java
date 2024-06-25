@@ -27,12 +27,18 @@ public class Comment extends Auditable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Comment comment = (Comment) o;
 
-        if (!Objects.equals(id, comment.id)) return false;
+        if (!Objects.equals(id, comment.id)) {
+            return false;
+        }
         return Objects.equals(body, comment.body);
     }
 

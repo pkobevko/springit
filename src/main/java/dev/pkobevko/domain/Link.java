@@ -32,12 +32,18 @@ public class Link extends Auditable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Link link = (Link) o;
 
-        if (!Objects.equals(id, link.id)) return false;
+        if (!Objects.equals(id, link.id)) {
+            return false;
+        }
         return Objects.equals(title, link.title);
     }
 
