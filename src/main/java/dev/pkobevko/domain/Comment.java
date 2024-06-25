@@ -4,6 +4,7 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,8 @@ public class Comment {
     @GeneratedValue
     private Long id;
     private String body;
+    @ManyToOne
+    private Link link;
 
     @Override
     public boolean equals(Object o) {

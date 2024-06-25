@@ -1,9 +1,11 @@
 package dev.pkobevko.domain;
 
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -25,6 +27,8 @@ public class Link {
     private String title;
     @NonNull
     private String url;
+    @OneToMany(mappedBy = "link")
+    private List<Comment> comments;
 
     @Override
     public boolean equals(Object o) {
