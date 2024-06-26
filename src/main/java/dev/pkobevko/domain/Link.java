@@ -14,10 +14,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
-@RequiredArgsConstructor
-@NoArgsConstructor
 @ToString(exclude = {"url"})
 public class Link extends Auditable {
     @Id
