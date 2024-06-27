@@ -18,7 +18,7 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString(exclude = {"url"})
+@ToString(exclude = {"url", "comments"})
 public class Link extends Auditable {
     @Id
     @GeneratedValue
