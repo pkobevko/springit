@@ -1,5 +1,6 @@
 package dev.pkobevko.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -28,7 +29,7 @@ public class Link extends Auditable {
     @NonNull
     private String url;
     @OneToMany(mappedBy = "link")
-    private List<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
@@ -52,5 +53,9 @@ public class Link extends Auditable {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         return result;
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 }
